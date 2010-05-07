@@ -19,20 +19,26 @@ namespace ImageProcessing
       CImage<Complex> NoiseImg = Background.GenarateNoise(height, width).ToComplex();
       var fNImg = FourierTransform.ForwardFFT2D(NoiseImg);
       CImage<Complex> img = new CImage<Complex>(height, width);
-      for (int i = 0; i < height; i++)
-      {
-        for (int j = 0; j < width; j++)
-        {
-          img[i, j] = fBgImg[i, j].Sqrt * fNImg[i, j];
-        }
-      }
-      var res = FourierTransform.BackwardFFT2D(img).ToDouble();
+      CImage<Complex> sqrt = new CImage<Complex>(height, width);
+
 
       for (int i = 0; i < height; i++)
       {
         for (int j = 0; j < width; j++)
         {
-          res[i, j] += Mf;
+          sqrt[i, j] = fBgImg[i, j].Sqrt;
+          //img[i, j] = new Complex(Math.Sqrt(Math.Abs(fBgImg[i, j].Re)), 0) * fNImg[i, j];
+          img[i, j] = sqrt[i, j] * fNImg[i, j];
+        }
+      }
+      var res = FourierTransform.BackwardFFT2D(img).ToDouble();
+
+      double c = width * height;
+      for (int i = 0; i < height; i++)
+      {
+        for (int j = 0; j < width; j++)
+        {
+          res[i, j] = res[i, j]/c + Mf;
         }
       }
 
@@ -63,12 +69,11 @@ namespace ImageProcessing
         for (int j = 0; j < width; j++)
         {
           int jj = j - width / 2;
-          ACFimg[i, j] = Df * Math.Exp(-alfa * Math.Sqrt(ii * ii + jj * jj));
+          ACFimg[(i + height / 2) % height, (j + width / 2) % width] = Df * Math.Exp(-alfa * Math.Sqrt(ii * ii + jj * jj));
         }
       }
       return ACFimg;
     }
-
 
   }
 }

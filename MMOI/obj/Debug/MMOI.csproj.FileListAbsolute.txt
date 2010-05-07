@@ -27,3 +27,23 @@ C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.Properties.Resources.resource
 C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.csproj.GenerateResource.Cache
 C:\Users\Elena\Desktop\MMOI\MMOI\bin\Debug\ImageProcessing.dll
 C:\Users\Elena\Desktop\MMOI\MMOI\bin\Debug\ImageProcessing.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\obj\Debug\MMOI.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\bin\Debug\MMOI.exe
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\bin\Debug\MMOI.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\bin\Debug\ImageProcessing.dll
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\bin\Debug\ImageProcessing.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\obj\Debug\MMOI.Form1.resources
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\obj\Debug\MMOI.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\obj\Debug\MMOI.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\MMOI\obj\Debug\MMOI.exe
+D:\MMOI\MMOI\MMOI\obj\Debug\MMOI.exe
+D:\MMOI\MMOI\MMOI\obj\Debug\MMOI.pdb
+D:\MMOI\MMOI\MMOI\bin\Debug\MMOI.exe
+D:\MMOI\MMOI\MMOI\bin\Debug\MMOI.pdb
+D:\MMOI\MMOI\MMOI\bin\Debug\ImageProcessing.dll
+D:\MMOI\MMOI\MMOI\bin\Debug\ImageProcessing.pdb
+D:\MMOI\MMOI\MMOI\obj\Debug\ResolveAssemblyReference.cache
+D:\MMOI\MMOI\MMOI\obj\Debug\MMOI.Form1.resources
+D:\MMOI\MMOI\MMOI\obj\Debug\MMOI.Properties.Resources.resources
+D:\MMOI\MMOI\MMOI\obj\Debug\MMOI.csproj.GenerateResource.Cache

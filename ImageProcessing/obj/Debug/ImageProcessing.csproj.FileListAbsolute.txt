@@ -10,3 +10,15 @@ C:\Users\Elena\Desktop\MMOI\ImageProcessing\bin\Debug\fftwlib.dll
 C:\Users\Elena\Desktop\MMOI\ImageProcessing\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Elena\Desktop\MMOI\ImageProcessing\obj\Debug\ImageProcessing.dll
 C:\Users\Elena\Desktop\MMOI\ImageProcessing\obj\Debug\ImageProcessing.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\ImageProcessing\bin\Debug\ImageProcessing.dll
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\ImageProcessing\bin\Debug\fftwlib.dll
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\ImageProcessing\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\ImageProcessing\obj\Debug\ImageProcessing.dll
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\ImageProcessing\obj\Debug\ImageProcessing.pdb
+D:\MMOI\MMOI\ImageProcessing\bin\Debug\ImageProcessing.dll
+D:\MMOI\MMOI\ImageProcessing\bin\Debug\ImageProcessing.pdb
+D:\MMOI\MMOI\ImageProcessing\bin\Debug\fftwlib.dll
+D:\MMOI\MMOI\ImageProcessing\obj\Debug\ResolveAssemblyReference.cache
+D:\MMOI\MMOI\ImageProcessing\obj\Debug\ImageProcessing.dll
+D:\MMOI\MMOI\ImageProcessing\obj\Debug\ImageProcessing.pdb

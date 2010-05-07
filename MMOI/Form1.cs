@@ -19,7 +19,7 @@ namespace MMOI
 
         private void button1_Click(object sender, EventArgs e)
         {
-          pictureBox1.Image = Background.GetBackground(8, 8, 1, 1, 128).CImageToBitmap();
+          pictureBox1.Image = Background.GetBackground(128, 128, 0.5, 100, 128).CImageToBitmap();
         }
     }
 }

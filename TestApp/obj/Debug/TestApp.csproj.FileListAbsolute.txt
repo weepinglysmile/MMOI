@@ -14,3 +14,19 @@ C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\ImageProcessing.dll
 C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\fftwlib.dll
 C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\ImageProcessing.pdb
 C:\Users\Elena\Desktop\MMOI\TestApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\bin\Debug\TestApp.exe
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\bin\Debug\TestApp.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\bin\Debug\ImageProcessing.dll
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\bin\Debug\fftwlib.dll
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\bin\Debug\ImageProcessing.pdb
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\obj\Debug\TestApp.exe
+C:\Documents and Settings\Administrator\Desktop\MMOI\MMOI\TestApp\obj\Debug\TestApp.pdb
+D:\MMOI\MMOI\TestApp\bin\Debug\TestApp.exe
+D:\MMOI\MMOI\TestApp\bin\Debug\TestApp.pdb
+D:\MMOI\MMOI\TestApp\bin\Debug\ImageProcessing.dll
+D:\MMOI\MMOI\TestApp\bin\Debug\fftwlib.dll
+D:\MMOI\MMOI\TestApp\bin\Debug\ImageProcessing.pdb
+D:\MMOI\MMOI\TestApp\obj\Debug\ResolveAssemblyReference.cache
+D:\MMOI\MMOI\TestApp\obj\Debug\TestApp.exe
+D:\MMOI\MMOI\TestApp\obj\Debug\TestApp.pdb
