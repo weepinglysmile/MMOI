@@ -87,6 +87,8 @@ namespace ImageProcessing
       fplan1 = fftw.dft_2d(h, w, pin, pout, fftw_direction.Backward, fftw_flags.Estimate);
       fftw.execute(fplan1);
 
+      double normalize = h * w;
+
       CImage<Complex> cImg = new CImage<Complex>(h, w);
       unsafe
       {
@@ -95,8 +97,8 @@ namespace ImageProcessing
         {
           for (int j = 0; j < w; j++)
           {
-            cImg[i, j].Re = buf[(i * h + j) * 2];
-            cImg[i, j].Im = buf[(i * h + j) * 2 + 1];
+            cImg[i, j].Re = buf[(i * h + j) * 2] / normalize;
+            cImg[i, j].Im = buf[(i * h + j) * 2 + 1] / normalize;
           }
         }
       }

@@ -33,12 +33,11 @@ namespace ImageProcessing
       }
       var res = FourierTransform.BackwardFFT2D(img).ToDouble();
 
-      double c = width * height;
       for (int i = 0; i < height; i++)
       {
         for (int j = 0; j < width; j++)
         {
-          res[i, j] = res[i, j]/c + Mf;
+          res[i, j] = res[i, j] + Mf;
         }
       }
 

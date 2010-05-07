@@ -24,7 +24,8 @@ namespace TestApp
       }
 
 
-      var res = FourierTransform.ForwardFFT2D(image.ToComplex());
+      var res1 = FourierTransform.ForwardFFT2D(image.ToComplex());
+      var res = FourierTransform.BackwardFFT2D(res1);
 
       for (int i = 0; i < 8; i++)
       {
@@ -39,8 +40,6 @@ namespace TestApp
       var c1 = new Complex(-123, 456);
       var c2 = c1.Sqrt;
       Console.WriteLine(c2*c2);
-
-
     }
   }
 }

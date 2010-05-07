@@ -165,14 +165,14 @@ namespace ImageProcessing
 
 
               CImage<Complex> fImg = FourierTransform.ForwardFFT2D(img.ToComplex());
-              //CImage<Complex> fVIT = VIT.ToComplex();
-              //for (int i = 0; i < Size; i++)
-              //{
-              //    for (int j = 0; j < Size; j++)
-              //    {
-              //        fImg[i, j] = fImg[i, j];//* fVIT[i, j];
-              //    }  
-              //}
+              CImage<Complex> fVIT = VIT.ToComplex();
+              for (int i = 0; i < Size; i++)
+              {
+                  for (int j = 0; j < Size; j++)
+                  {
+                      fImg[i, j] = fImg[i, j]* fVIT[i, j];
+                  }  
+              }
               imgOut = FourierTransform.BackwardFFT2D(fImg).ToDouble();
           }
           return imgOut;  
