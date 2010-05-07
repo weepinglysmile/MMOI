@@ -1,1 +1,7 @@
 *.exe
+*.suo
+*.dll
+bin
+obj
+Release
+Debug
