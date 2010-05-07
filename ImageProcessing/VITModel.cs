@@ -14,7 +14,8 @@ namespace ImageProcessing
        double S2 { get; set; }
        int K { get; set; }
        double Theta { get; set; }
-       double V { get; set; }
+       double V1 { get; set; }
+       double V2 { get; set; }
        int oSize { get; set; }
        int Size { get; set; }
 
@@ -22,10 +23,11 @@ namespace ImageProcessing
        public CImage<double> _H0;
        public CImage<double> _Hk;
        public CImage<double> _Hb;
+       public CImage<double> VIT;
 
 
       public VITModel(double r, double l1, double l2, double s1, double s2, int k, double theta,
-          double v, int o_size, int size)
+          double v1, double v2, int o_size, int size)
       {
           R = r;
           L1 = l1;
@@ -33,7 +35,8 @@ namespace ImageProcessing
           S1 = s1;
           S2 = s2;
           K = k;
-          V = v;
+          V1 = v1;
+          V2 = v2;
           oSize = o_size;
           Size = size;
       }
@@ -112,7 +115,68 @@ namespace ImageProcessing
           }
       }
 
-     
+      double Hb(int i, int j)
+      {
+          if (Theta == 0) return 1;
+          double a = Math.PI * i / oSize / 2 * V1 * Theta;
+          double b = Math.PI * j / oSize / 2 * V2 * Theta;
+          return (Math.Sin(a + b) / (a + b));
+      }
+
+      public void GenerateHb()
+      {
+          _Hb = new CImage<double>(Size, Size);
+          for (int i = 0; i < Size; i++)
+          {
+              int ii = i - Size / 2;
+              for (int j = 0; j < Size; j++)
+              {
+                  int jj = j - Size / 2;
+                  _Hb[i, j] = Hb(ii, jj);
+              }
+          }
+      }
+
+      public void GenerateVIT()
+      {
+          VIT = new CImage<double>(Size, Size);
+          for (int i = 0; i < Size; i++)
+          {
+              for (int j = 0; j < Size; j++)
+              {
+                  VIT[i, j] = _Hopt[i, j] * _H0[i, j] * _Hk[i, j] * _Hb[i, j] ;
+              }
+          }
+ 
+      }
+
+      public CImage<double> AppVIT(CImage<double> img)
+      {
+          int height = img.GetH;
+          int width = img.GetW;
+          CImage<double> imgOut = new CImage<double>(height, width);
+          if ((height == Size) || (width == Size))
+          {
+              GenerateH0();
+              GenerateHk();
+              GenerateHopt();
+              GenerateHb();
+              GenerateVIT();
+
+
+              CImage<Complex> fImg = FourierTransform.ForwardFFT2D(img.ToComplex());
+              //CImage<Complex> fVIT = VIT.ToComplex();
+              //for (int i = 0; i < Size; i++)
+              //{
+              //    for (int j = 0; j < Size; j++)
+              //    {
+              //        fImg[i, j] = fImg[i, j];//* fVIT[i, j];
+              //    }  
+              //}
+              imgOut = FourierTransform.BackwardFFT2D(fImg).ToDouble();
+          }
+          return imgOut;  
+      }
 
     }
 }
