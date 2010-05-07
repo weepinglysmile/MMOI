@@ -1,0 +1,16 @@
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\bin\Debug\TestApp.exe
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\bin\Debug\TestApp.pdb
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\bin\Debug\ImageProcessing.dll
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\bin\Debug\fftwlib.dll
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\bin\Debug\ImageProcessing.pdb
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\obj\Debug\TestApp.exe
+C:\Users\Anatoliy\Desktop\MMOI\TestApp\obj\Debug\TestApp.pdb
+C:\Users\Elena\Desktop\MMOI\TestApp\obj\Debug\TestApp.exe
+C:\Users\Elena\Desktop\MMOI\TestApp\obj\Debug\TestApp.pdb
+C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\TestApp.exe
+C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\TestApp.pdb
+C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\ImageProcessing.dll
+C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\fftwlib.dll
+C:\Users\Elena\Desktop\MMOI\TestApp\bin\Debug\ImageProcessing.pdb
+C:\Users\Elena\Desktop\MMOI\TestApp\obj\Debug\ResolveAssemblyReference.cache

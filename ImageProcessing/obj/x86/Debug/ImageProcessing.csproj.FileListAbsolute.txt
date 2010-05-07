@@ -1,0 +1,6 @@
+C:\Users\Anatoliy\Desktop\MMOI\ImageProcessing\bin\x86\Debug\ImageProcessing.dll
+C:\Users\Anatoliy\Desktop\MMOI\ImageProcessing\bin\x86\Debug\ImageProcessing.pdb
+C:\Users\Anatoliy\Desktop\MMOI\ImageProcessing\bin\x86\Debug\fftwlib.dll
+C:\Users\Anatoliy\Desktop\MMOI\ImageProcessing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Anatoliy\Desktop\MMOI\ImageProcessing\obj\x86\Debug\ImageProcessing.dll
+C:\Users\Anatoliy\Desktop\MMOI\ImageProcessing\obj\x86\Debug\ImageProcessing.pdb

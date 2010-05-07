@@ -1,0 +1,29 @@
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\obj\Debug\MMOI.Form1.resources
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\obj\Debug\MMOI.Properties.Resources.resources
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\obj\Debug\MMOI.csproj.GenerateResource.Cache
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\bin\Debug\MMOI.exe
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\bin\Debug\MMOI.pdb
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\bin\Debug\fftwlib.xml
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\obj\Debug\MMOI.exe
+C:\Users\Elena\Documents\Visual Studio 2008\Projects\MMOI\MMOI\obj\Debug\MMOI.pdb
+C:\Users\Elena\Desktop\MMOI\MMOI\obj\Debug\MMOI.exe
+C:\Users\Elena\Desktop\MMOI\MMOI\obj\Debug\MMOI.pdb
+C:\Users\Elena\Desktop\MMOI\MMOI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Elena\Desktop\MMOI\MMOI\obj\Debug\MMOI.Form1.resources
+C:\Users\Elena\Desktop\MMOI\MMOI\obj\Debug\MMOI.Properties.Resources.resources
+C:\Users\Elena\Desktop\MMOI\MMOI\obj\Debug\MMOI.csproj.GenerateResource.Cache
+C:\Users\Elena\Desktop\MMOI\MMOI\bin\Debug\MMOI.exe
+C:\Users\Elena\Desktop\MMOI\MMOI\bin\Debug\MMOI.pdb
+G:\MMOI\MMOI\obj\Debug\MMOI.exe
+G:\MMOI\MMOI\obj\Debug\MMOI.pdb
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.exe
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.pdb
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\bin\Debug\MMOI.exe
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\bin\Debug\MMOI.pdb
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.Form1.resources
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.Properties.Resources.resources
+C:\Users\Anatoliy\Desktop\MMOI\MMOI\obj\Debug\MMOI.csproj.GenerateResource.Cache
+C:\Users\Elena\Desktop\MMOI\MMOI\bin\Debug\ImageProcessing.dll
+C:\Users\Elena\Desktop\MMOI\MMOI\bin\Debug\ImageProcessing.pdb
