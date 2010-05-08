@@ -12,16 +12,36 @@ namespace MMOI
 {
   public partial class Form1 : Form
   {
+    Parameters param = new Parameters();
+    CImage<double> background;
+    CImage<double> bgAndObj;
+    CImage<double> vitImg;
+
     public Form1()
     {
       InitializeComponent();
+      propertyGrid1.SelectedObject = param;
     }
 
     private void button1_Click(object sender, EventArgs e)
     {
-      VITModel vit = new VITModel(1, 0.3, 0.9, 0.333, 1, 3, 0, 0, 0, 128, 128);
-      pictureBox1.Image = vit.AppVIT(Background.GetBackground(128, 128, 0.5, 100, 128)).CImageToBitmap();
-      //pictureBox1.Image = Background.GetBackground(256, 256, 0.05, 625, 128).CImageToBitmap();
+      VITModel vit = new VITModel(2, 0.3, 0.9, 0.333, 1, 3, 0, 0, 0, 128, 128);
+     // pictureBox1.Image = vit.AppVIT(Background.GetBackground(128, 128, 0.05, 625, 128)).CImageToBitmap();
+      //pictureBox1.Image = Background.GetBackground(512, 512, 0.05, 625, 128).CImageToBitmap();
     }
+
+    private void BackgroundBtn_Click(object sender, EventArgs e)
+    {
+      background = Background.GetBackground(param.Size, param.Size, param.Alfa, param.Df, param.Mf);
+      pictureBox1.Image = background.CImageToBitmap();
+    }
+
+    private void VITBtn_Click(object sender, EventArgs e)
+    {
+      VITModel model = new VITModel(param.R, param.L1, param.L2, param.S1, param.S2, param.K, 0,0,0, param.Size, param.Size);
+      vitImg = model.AppVIT(background, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked);
+      pictureBox2.Image = vitImg.CImageToBitmap();
+    }
+
   }
 }
