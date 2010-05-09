@@ -13,7 +13,7 @@ namespace MMOI
     int xmax=200;
     int mf = 125;
     int df = 100;
-    int d = 7;
+    int radius = 7;
     double q = 0.002;
     double l1 = 0.3;
     double l2 = 0.9;
@@ -44,11 +44,11 @@ namespace MMOI
       set { xmax = value; }
     }
 
-    [CategoryAttribute("Объекты"), DisplayName ("Диаметр объектов")]
-    public int D
+    [CategoryAttribute("Объекты"), DisplayName ("Радиус объектов")]
+    public int Radius
     {
-      get { return d; }
-      set { d = value; }
+      get { return radius; }
+      set { radius = value; }
     }
    
     [CategoryAttribute("Объекты"), DisplayName("Плотность объектов")]

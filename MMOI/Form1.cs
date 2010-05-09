@@ -43,5 +43,11 @@ namespace MMOI
       pictureBox2.Image = vitImg.CImageToBitmap();
     }
 
+    private void ObjBtn_Click(object sender, EventArgs e)
+    {
+      CImage<double> img = Objects.GetObjects(background, param.Radius, param.Q, param.Xmin, param.Xmax);
+      pictureBox1.Image = img.CImageToBitmap();
+    }
+
   }
 }

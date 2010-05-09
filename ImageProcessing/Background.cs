@@ -46,7 +46,7 @@ namespace ImageProcessing
 
     public static CImage<double> GenarateNoise(int height, int width)
     {
-      Random rnd = new Random();
+      Random rnd = new Random(1);
 
       CImage<double> nImg = new CImage<double>(height, width);
       for (int i = 0; i < height; i++)

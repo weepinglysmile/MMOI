@@ -35,16 +35,16 @@
           this.panel2 = new System.Windows.Forms.Panel();
           this.pictureBox2 = new System.Windows.Forms.PictureBox();
           this.panel3 = new System.Windows.Forms.Panel();
-          this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
           this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+          this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
           this.panel4 = new System.Windows.Forms.Panel();
-          this.BackgroundBtn = new System.Windows.Forms.Button();
-          this.ObjBtn = new System.Windows.Forms.Button();
-          this.VITBtn = new System.Windows.Forms.Button();
-          this.OptSysCheckBox = new System.Windows.Forms.CheckBox();
-          this.H0CheckBox = new System.Windows.Forms.CheckBox();
-          this.HkCheckBox = new System.Windows.Forms.CheckBox();
           this.NoiseCheckBox = new System.Windows.Forms.CheckBox();
+          this.HkCheckBox = new System.Windows.Forms.CheckBox();
+          this.H0CheckBox = new System.Windows.Forms.CheckBox();
+          this.OptSysCheckBox = new System.Windows.Forms.CheckBox();
+          this.VITBtn = new System.Windows.Forms.Button();
+          this.ObjBtn = new System.Windows.Forms.Button();
+          this.BackgroundBtn = new System.Windows.Forms.Button();
           this.tableLayoutPanel1.SuspendLayout();
           this.tableLayoutPanel2.SuspendLayout();
           this.panel1.SuspendLayout();
@@ -131,6 +131,14 @@
           this.panel3.Size = new System.Drawing.Size(206, 258);
           this.panel3.TabIndex = 1;
           // 
+          // propertyGrid1
+          // 
+          this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+          this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
+          this.propertyGrid1.Name = "propertyGrid1";
+          this.propertyGrid1.Size = new System.Drawing.Size(206, 258);
+          this.propertyGrid1.TabIndex = 1;
+          // 
           // tableLayoutPanel3
           // 
           this.tableLayoutPanel3.ColumnCount = 1;
@@ -145,14 +153,6 @@
           this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
           this.tableLayoutPanel3.Size = new System.Drawing.Size(720, 433);
           this.tableLayoutPanel3.TabIndex = 1;
-          // 
-          // propertyGrid1
-          // 
-          this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-          this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
-          this.propertyGrid1.Name = "propertyGrid1";
-          this.propertyGrid1.Size = new System.Drawing.Size(206, 258);
-          this.propertyGrid1.TabIndex = 1;
           // 
           // panel4
           // 
@@ -169,34 +169,41 @@
           this.panel4.Size = new System.Drawing.Size(714, 157);
           this.panel4.TabIndex = 1;
           // 
-          // BackgroundBtn
+          // NoiseCheckBox
           // 
-          this.BackgroundBtn.Location = new System.Drawing.Point(9, 15);
-          this.BackgroundBtn.Name = "BackgroundBtn";
-          this.BackgroundBtn.Size = new System.Drawing.Size(75, 23);
-          this.BackgroundBtn.TabIndex = 0;
-          this.BackgroundBtn.Text = "Фон";
-          this.BackgroundBtn.UseVisualStyleBackColor = true;
-          this.BackgroundBtn.Click += new System.EventHandler(this.BackgroundBtn_Click);
+          this.NoiseCheckBox.AutoSize = true;
+          this.NoiseCheckBox.Checked = true;
+          this.NoiseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+          this.NoiseCheckBox.Location = new System.Drawing.Point(122, 87);
+          this.NoiseCheckBox.Name = "NoiseCheckBox";
+          this.NoiseCheckBox.Size = new System.Drawing.Size(48, 17);
+          this.NoiseCheckBox.TabIndex = 6;
+          this.NoiseCheckBox.Text = "Шум";
+          this.NoiseCheckBox.UseVisualStyleBackColor = true;
           // 
-          // ObjBtn
+          // HkCheckBox
           // 
-          this.ObjBtn.Location = new System.Drawing.Point(10, 45);
-          this.ObjBtn.Name = "ObjBtn";
-          this.ObjBtn.Size = new System.Drawing.Size(75, 23);
-          this.ObjBtn.TabIndex = 1;
-          this.ObjBtn.Text = "Объекты";
-          this.ObjBtn.UseVisualStyleBackColor = true;
+          this.HkCheckBox.AutoSize = true;
+          this.HkCheckBox.Checked = true;
+          this.HkCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+          this.HkCheckBox.Location = new System.Drawing.Point(122, 63);
+          this.HkCheckBox.Name = "HkCheckBox";
+          this.HkCheckBox.Size = new System.Drawing.Size(40, 17);
+          this.HkCheckBox.TabIndex = 5;
+          this.HkCheckBox.Text = "Hk";
+          this.HkCheckBox.UseVisualStyleBackColor = true;
           // 
-          // VITBtn
+          // H0CheckBox
           // 
-          this.VITBtn.Location = new System.Drawing.Point(10, 75);
-          this.VITBtn.Name = "VITBtn";
-          this.VITBtn.Size = new System.Drawing.Size(75, 23);
-          this.VITBtn.TabIndex = 2;
-          this.VITBtn.Text = "ВИТ";
-          this.VITBtn.UseVisualStyleBackColor = true;
-          this.VITBtn.Click += new System.EventHandler(this.VITBtn_Click);
+          this.H0CheckBox.AutoSize = true;
+          this.H0CheckBox.Checked = true;
+          this.H0CheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+          this.H0CheckBox.Location = new System.Drawing.Point(122, 39);
+          this.H0CheckBox.Name = "H0CheckBox";
+          this.H0CheckBox.Size = new System.Drawing.Size(40, 17);
+          this.H0CheckBox.TabIndex = 4;
+          this.H0CheckBox.Text = "H0";
+          this.H0CheckBox.UseVisualStyleBackColor = true;
           // 
           // OptSysCheckBox
           // 
@@ -211,41 +218,35 @@
           this.OptSysCheckBox.Text = "Оптическая система";
           this.OptSysCheckBox.UseVisualStyleBackColor = true;
           // 
-          // H0CheckBox
+          // VITBtn
           // 
-          this.H0CheckBox.AutoSize = true;
-          this.H0CheckBox.Checked = true;
-          this.H0CheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-          this.H0CheckBox.Location = new System.Drawing.Point(122, 39);
-          this.H0CheckBox.Name = "H0CheckBox";
-          this.H0CheckBox.Size = new System.Drawing.Size(40, 17);
-          this.H0CheckBox.TabIndex = 4;
-          this.H0CheckBox.Text = "H0";
-          this.H0CheckBox.UseVisualStyleBackColor = true;
+          this.VITBtn.Location = new System.Drawing.Point(10, 75);
+          this.VITBtn.Name = "VITBtn";
+          this.VITBtn.Size = new System.Drawing.Size(75, 23);
+          this.VITBtn.TabIndex = 2;
+          this.VITBtn.Text = "ВИТ";
+          this.VITBtn.UseVisualStyleBackColor = true;
+          this.VITBtn.Click += new System.EventHandler(this.VITBtn_Click);
           // 
-          // HkCheckBox
+          // ObjBtn
           // 
-          this.HkCheckBox.AutoSize = true;
-          this.HkCheckBox.Checked = true;
-          this.HkCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-          this.HkCheckBox.Location = new System.Drawing.Point(122, 63);
-          this.HkCheckBox.Name = "HkCheckBox";
-          this.HkCheckBox.Size = new System.Drawing.Size(40, 17);
-          this.HkCheckBox.TabIndex = 5;
-          this.HkCheckBox.Text = "Hk";
-          this.HkCheckBox.UseVisualStyleBackColor = true;
+          this.ObjBtn.Location = new System.Drawing.Point(10, 45);
+          this.ObjBtn.Name = "ObjBtn";
+          this.ObjBtn.Size = new System.Drawing.Size(75, 23);
+          this.ObjBtn.TabIndex = 1;
+          this.ObjBtn.Text = "Объекты";
+          this.ObjBtn.UseVisualStyleBackColor = true;
+          this.ObjBtn.Click += new System.EventHandler(this.ObjBtn_Click);
           // 
-          // NoiseCheckBox
+          // BackgroundBtn
           // 
-          this.NoiseCheckBox.AutoSize = true;
-          this.NoiseCheckBox.Checked = true;
-          this.NoiseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-          this.NoiseCheckBox.Location = new System.Drawing.Point(122, 87);
-          this.NoiseCheckBox.Name = "NoiseCheckBox";
-          this.NoiseCheckBox.Size = new System.Drawing.Size(48, 17);
-          this.NoiseCheckBox.TabIndex = 6;
-          this.NoiseCheckBox.Text = "Шум";
-          this.NoiseCheckBox.UseVisualStyleBackColor = true;
+          this.BackgroundBtn.Location = new System.Drawing.Point(9, 15);
+          this.BackgroundBtn.Name = "BackgroundBtn";
+          this.BackgroundBtn.Size = new System.Drawing.Size(75, 23);
+          this.BackgroundBtn.TabIndex = 0;
+          this.BackgroundBtn.Text = "Фон";
+          this.BackgroundBtn.UseVisualStyleBackColor = true;
+          this.BackgroundBtn.Click += new System.EventHandler(this.BackgroundBtn_Click);
           // 
           // Form1
           // 

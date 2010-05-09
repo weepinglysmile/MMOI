@@ -52,14 +52,14 @@ namespace ImageProcessing
       }
     }
 
-    public CImage<T> Copy(CImage<T> img)
+    public CImage<T> Copy()
     {
-      CImage<T> newImg = new CImage<T>(img.GetH, img.GetW);
-      for (int i = 0; i < img.GetH; i++)
+      CImage<T> newImg = new CImage<T>(GetH, GetW);
+      for (int i = 0; i < GetH; i++)
       {
-        for (int j = 0; j < img.GetW; j++)
+        for (int j = 0; j < GetW; j++)
         {
-          newImg[i, j] = img[i, j];
+          newImg[i, j] = this[i, j];
         }
       }
       return newImg;
