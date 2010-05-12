@@ -34,19 +34,20 @@ namespace MMOI
     {
       background = Background.GetBackground(param.Size, param.Size, param.Alfa, param.Df, param.Mf);
       pictureBox1.Image = background.CImageToBitmap();
+
     }
 
     private void VITBtn_Click(object sender, EventArgs e)
     {
       VITModel model = new VITModel(param.R, param.L1, param.L2, param.S1, param.S2, param.K, 0,0,0, param.Size, param.Size);
-      vitImg = model.AppVIT(background, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked);
+      vitImg = model.AppVIT(bgAndObj, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked);
       pictureBox2.Image = vitImg.CImageToBitmap();
     }
 
     private void ObjBtn_Click(object sender, EventArgs e)
     {
-      CImage<double> img = Objects.GetObjects(background, param.Radius, param.Q, param.Xmin, param.Xmax);
-      pictureBox1.Image = img.CImageToBitmap();
+     Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax);
+      pictureBox1.Image = bgAndObj.CImageToBitmap();
     }
 
   }

@@ -47,8 +47,8 @@ namespace MMOI
     [CategoryAttribute("Объекты"), DisplayName ("Радиус объектов")]
     public int Radius
     {
-      get { return radius; }
-      set { radius = value; }
+        get { return radius; }
+        set { radius = value; }
     }
    
     [CategoryAttribute("Объекты"), DisplayName("Плотность объектов")]
