@@ -46,7 +46,7 @@ namespace MMOI
 
     private void ObjBtn_Click(object sender, EventArgs e)
     {
-     Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax);
+     Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked);
       pictureBox1.Image = bgAndObj.CImageToBitmap();
     }
 

@@ -32,7 +32,7 @@ namespace ImageProcessing
       {
         for (int j = 0; j < m; j++)
         {
-          var val = img[j, i];
+          var val = img[i, j];
           int c = (int)(val);
           bmp.SetPixel(i, j, Color.FromArgb(c, c, c));
         }

@@ -77,7 +77,7 @@ namespace ImageProcessing
         {
           Color cl = bmp.GetPixel(i, j);
           double buf = (double)cl.B;
-          Array[j, i] = buf / 256;
+          Array[i, j] = buf / 256;
         }
 
       }
