@@ -21,8 +21,8 @@ namespace MMOI
     double s2 = 1;
     int k = 3;
     int size = 256;
-    double alfa = 0.05;
-    double r=2;
+    double alfa = 0.5;
+    double r=1;
     
     [CategoryAttribute("Изображение")]
     public int Size

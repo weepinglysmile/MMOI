@@ -86,6 +86,58 @@ namespace ImageProcessing
         return true;
     }
 
+     public static List<Point> FindObjects(CImage<double> img, int r)
+     {
+         List<Point> obj = new List<Point>();
+         int heigth = img.GetH;
+         int width = img.GetW;
+         double[,] dispersion = new double[width, heigth];
+         List<Point> circle = Bresenham.GetFullCircle(Bresenham.GetCircle(0, 0, r-1), new Point(0, 0));
+         for (int i = 0; i < heigth; i++)
+         {
+             for (int j = 0; j < width; j++)
+             {
+                 List<Point> c = new List<Point>();
+                 foreach (Point p in circle)
+                 {
+                     c.Add(new Point((j + p.x + width) % width, (i + p.y + heigth) % heigth));
+                 }
+                 double mean = GetMean(img, c);
+                 double d = GetDispersion(img, c, mean);
+                 if (d < 1)
+                 {
+                     obj.Add(new Point(j, i));
+                 }
+                 dispersion[j, i] = d;
+             }
+         }
+
+         return obj;
+     }
+
+     static double GetMean(CImage<double> img, List<Point> points)
+     {
+         double mean = 0;
+         foreach (var p in points)
+         {
+             double buf = img[p.x, p.y];
+             mean += img[p.x, p.y];             
+         }
+         mean /= points.Count();
+         return mean;
+     }
+
+     static double GetDispersion(CImage<double> img, List<Point> points, double mean)
+     {
+         double d = 0;
+         foreach (var p in points)
+         {
+             double X = img[p.x, p.y];
+             d += ((img[p.x, p.y] - mean) * (img[p.x, p.y] - mean));    
+         }
+         d /= points.Count();
+         return d;
+     }
 
     static void DrawCircle(int X, int Y, int L, CImage<double> img, int r)
     {

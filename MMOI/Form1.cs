@@ -46,8 +46,27 @@ namespace MMOI
 
     private void ObjBtn_Click(object sender, EventArgs e)
     {
-     Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked);
-      pictureBox1.Image = bgAndObj.CImageToBitmap();
+        
+     List<ImageProcessing.Point> points = Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked);
+     foreach (ImageProcessing.Point p in points)
+     {
+         ObjList.Items.Add(p);
+     }
+        pictureBox1.Image = bgAndObj.CImageToBitmap();
+    }
+
+    private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+    {
+        textBox1.Text = "(" + e.X.ToString() + ", " + e.Y.ToString() + ")";
+    }
+
+    private void Do_Click(object sender, EventArgs e)
+    {
+       List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, param.Radius);
+       foreach (ImageProcessing.Point p in points)
+       {
+           FoundObj.Items.Add(p);
+       }
     }
 
   }

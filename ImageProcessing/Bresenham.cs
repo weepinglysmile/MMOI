@@ -58,7 +58,10 @@ namespace ImageProcessing
                    }
 
            }
-           return points;
+           PointComparer pc = new PointComparer();
+           var buf = (from p in points
+                      select p).Distinct(pc);
+           return buf.ToList();
        }
 
        public static bool IsBorder(List<Point> points, Point p)

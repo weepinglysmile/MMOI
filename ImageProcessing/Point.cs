@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace ImageProcessing
 {
@@ -15,9 +16,17 @@ namespace ImageProcessing
            y = Y;
        }
 
+       public Point() { }
+
+       public override string ToString()
+       {
+           return "(" + x + ", " + y + ") ";
+       }
+
+
        public override int GetHashCode()
        {
-           return base.GetHashCode();
+           return x^y;
        }
 
        public override bool Equals(object obj)
@@ -41,4 +50,23 @@ namespace ImageProcessing
            return !(p1.Equals(p2));
        }
     }
+
+   public class PointComparer : IEqualityComparer<Point>
+   {
+       #region IEqualityComparer<Point> Members
+
+       public bool Equals(Point x, Point y)
+       {
+           return x.Equals(y);
+       }
+
+       public int GetHashCode(Point obj)
+       {
+           return obj.GetHashCode();
+       }
+
+       #endregion
+   }
+
+
 }
