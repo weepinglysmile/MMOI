@@ -93,7 +93,7 @@ namespace ImageProcessing
          int heigth = img.GetH;
          int width = img.GetW;
          dispersion = new double[width, heigth];
-         List<Point> circle = Bresenham.GetFullCircle(Bresenham.GetCircle(0, 0, r-1), new Point(0, 0));
+         List<Point> circle = Bresenham.GetFullCircle(Bresenham.GetCircle(0, 0, r), new Point(0, 0));
          for (int i = 0; i < heigth; i++)
          {
              for (int j = 0; j < width; j++)

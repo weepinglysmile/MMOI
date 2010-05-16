@@ -65,7 +65,7 @@ namespace MMOI
         FoundObj.Items.Clear();
         double [,] DMap;
         CImage<double> outImg;
-       List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, param.Radius, out DMap, double.Parse(textBox2.Text));
+       List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, int.Parse(textBox3.Text), out DMap, double.Parse(textBox2.Text));
        pictureBox2.Image = outImg.CImageToBitmap();
        CImage<double> dispersionMatrix = CImage<double>.MatrixToCImage(DMap, param.Size);
        pictureBox1.Image = (CImage<double>.Norm(dispersionMatrix, byte.MaxValue)).CImageToBitmap();
