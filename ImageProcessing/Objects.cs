@@ -86,12 +86,13 @@ namespace ImageProcessing
         return true;
     }
 
-     public static List<Point> FindObjects(CImage<double> img, int r)
+    public static List<Point> FindObjects(CImage<double> img, out CImage<double> outImg, int r, out double[,] dispersion, double threshold)
      {
+         outImg = img.Copy();
          List<Point> obj = new List<Point>();
          int heigth = img.GetH;
          int width = img.GetW;
-         double[,] dispersion = new double[width, heigth];
+         dispersion = new double[width, heigth];
          List<Point> circle = Bresenham.GetFullCircle(Bresenham.GetCircle(0, 0, r-1), new Point(0, 0));
          for (int i = 0; i < heigth; i++)
          {
@@ -104,9 +105,10 @@ namespace ImageProcessing
                  }
                  double mean = GetMean(img, c);
                  double d = GetDispersion(img, c, mean);
-                 if (d < 1)
+                 if (d < threshold)
                  {
                      obj.Add(new Point(j, i));
+                     outImg[j, i] = 255;
                  }
                  dispersion[j, i] = d;
              }

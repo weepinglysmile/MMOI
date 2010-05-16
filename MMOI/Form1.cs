@@ -62,11 +62,28 @@ namespace MMOI
 
     private void Do_Click(object sender, EventArgs e)
     {
-       List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, param.Radius);
+        FoundObj.Items.Clear();
+        double [,] DMap;
+        CImage<double> outImg;
+       List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, param.Radius, out DMap, double.Parse(textBox2.Text));
+       pictureBox2.Image = outImg.CImageToBitmap();
+       CImage<double> dispersionMatrix = CImage<double>.MatrixToCImage(DMap, param.Size);
+       pictureBox1.Image = (CImage<double>.Norm(dispersionMatrix, byte.MaxValue)).CImageToBitmap();
        foreach (ImageProcessing.Point p in points)
        {
            FoundObj.Items.Add(p);
        }
+    }
+
+
+    private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+    {
+        textBox1.Text = "(" + e.X.ToString() + ", " + e.Y.ToString() + ")";
+    }
+
+    private void button1_Click_1(object sender, EventArgs e)
+    {
+
     }
 
   }

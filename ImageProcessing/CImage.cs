@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Collections;
 
 namespace ImageProcessing
 {
-  public class CImage<T> where T : new()
+  public class CImage<T> where T : IComparable, new()
   {
     private T[,] a;
     private int height, width;
@@ -85,8 +86,50 @@ namespace ImageProcessing
       return Array;
     }
 
+    public static CImage<T> MatrixToCImage(T[,] arr, int size)
+    {
+        CImage<T> Array = new CImage<T>(size, size);
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                Array[i, j] = arr[i, j];
+            }
+        }
+        return Array;
+    }
 
+    public T GetMax()
+    {
+        T max = this[0, 0];
+        bool f;
+        for (int i = 0; i < GetH ; i++)
+        {
+            for (int j = 0; j < GetW; j++)
+            {
+                f = max.CompareTo(this[i,j]) <= 0;
+                if (f)
+                {
+                    max = this[i, j];
+                }
+            }
+            
+        }
+        return max;
+    }
 
+    public static CImage<double> Norm(CImage<double> img, double maxValue ) 
+    {
+        double max = img.GetMax();
+        for (int i = 0; i < img.GetH; i++)
+        {
+            for (int j = 0; j < img.GetW; j++)
+            {
+                img[i, j] = (img[i, j] / max) * maxValue;
+            }
+        }
+        return img;
+    }
   }
 
 }

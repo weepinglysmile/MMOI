@@ -38,6 +38,11 @@
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Do = new System.Windows.Forms.Button();
+            this.FoundObj = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ObjList = new System.Windows.Forms.ListBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.NoiseCheckBox = new System.Windows.Forms.CheckBox();
             this.HkCheckBox = new System.Windows.Forms.CheckBox();
@@ -46,11 +51,8 @@
             this.VITBtn = new System.Windows.Forms.Button();
             this.ObjBtn = new System.Windows.Forms.Button();
             this.BackgroundBtn = new System.Windows.Forms.Button();
-            this.ObjList = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.FoundObj = new System.Windows.Forms.ListBox();
-            this.Do = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -128,6 +130,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(270, 254);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
             // 
             // panel3
             // 
@@ -163,6 +166,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.Do);
             this.panel4.Controls.Add(this.FoundObj);
             this.panel4.Controls.Add(this.textBox1);
@@ -181,6 +186,48 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(769, 204);
             this.panel4.TabIndex = 1;
+            // 
+            // Do
+            // 
+            this.Do.Location = new System.Drawing.Point(15, 172);
+            this.Do.Name = "Do";
+            this.Do.Size = new System.Drawing.Size(94, 23);
+            this.Do.TabIndex = 12;
+            this.Do.Text = "Do";
+            this.Do.UseVisualStyleBackColor = true;
+            this.Do.Click += new System.EventHandler(this.Do_Click);
+            // 
+            // FoundObj
+            // 
+            this.FoundObj.FormattingEnabled = true;
+            this.FoundObj.Location = new System.Drawing.Point(614, 9);
+            this.FoundObj.Name = "FoundObj";
+            this.FoundObj.Size = new System.Drawing.Size(100, 186);
+            this.FoundObj.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(87, 128);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Координаты";
+            // 
+            // ObjList
+            // 
+            this.ObjList.FormattingEnabled = true;
+            this.ObjList.Location = new System.Drawing.Point(496, 9);
+            this.ObjList.Name = "ObjList";
+            this.ObjList.Size = new System.Drawing.Size(102, 186);
+            this.ObjList.TabIndex = 8;
             // 
             // checkBox1
             // 
@@ -273,47 +320,22 @@
             this.BackgroundBtn.UseVisualStyleBackColor = true;
             this.BackgroundBtn.Click += new System.EventHandler(this.BackgroundBtn_Click);
             // 
-            // ObjList
+            // textBox2
             // 
-            this.ObjList.FormattingEnabled = true;
-            this.ObjList.Location = new System.Drawing.Point(496, 9);
-            this.ObjList.Name = "ObjList";
-            this.ObjList.Size = new System.Drawing.Size(102, 186);
-            this.ObjList.TabIndex = 8;
+            this.textBox2.Location = new System.Drawing.Point(381, 43);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.Text = "1";
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Координаты";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(87, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // FoundObj
-            // 
-            this.FoundObj.FormattingEnabled = true;
-            this.FoundObj.Location = new System.Drawing.Point(614, 9);
-            this.FoundObj.Name = "FoundObj";
-            this.FoundObj.Size = new System.Drawing.Size(100, 186);
-            this.FoundObj.TabIndex = 11;
-            // 
-            // Do
-            // 
-            this.Do.Location = new System.Drawing.Point(15, 172);
-            this.Do.Name = "Do";
-            this.Do.Size = new System.Drawing.Size(94, 23);
-            this.Do.TabIndex = 12;
-            this.Do.Text = "Do";
-            this.Do.UseVisualStyleBackColor = true;
-            this.Do.Click += new System.EventHandler(this.Do_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Порог";
             // 
             // Form1
             // 
@@ -362,6 +384,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox FoundObj;
         private System.Windows.Forms.Button Do;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

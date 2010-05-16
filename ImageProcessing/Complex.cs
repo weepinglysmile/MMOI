@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ImageProcessing
 {
-  public class Complex
+  public class Complex : IComparable
   {
     public Complex(double re, double im)
     {
@@ -52,5 +52,16 @@ namespace ImageProcessing
     {
       return string.Format("({0}; {1})", Re, Im);
     }
+
+
+
+    #region IComparable Members
+
+    int IComparable.CompareTo(object obj)
+    {
+        throw new NotImplementedException();
+    }
+
+    #endregion
   }
 }   
