@@ -48,10 +48,6 @@ namespace ImageProcessing
             int x = (p.x + width) % width;
             int y = (p.y + height) % height;
             img[x, y] = L;
-            //if ((p.x >= 0) && (p.y >= 0) && (p.x < img.GetW) && (p.y < img.GetW))
-            //{
-            //  img[p.x, p.y] = 200;
-            //}
           }
         
       }
@@ -86,6 +82,57 @@ namespace ImageProcessing
         return true;
     }
 
+
+    public static List<Point> Skeletonization(List<Point> points)
+    {
+        List<Point> foundObj = new List<Point>();
+        while (points.Count != 0)
+        {
+            Point first = points[0];
+
+            List<Point> buf = new List<Point>();
+            List<Point> pointsGroup = new List<Point>();
+            buf.Add(first);
+            while (buf.Count != 0)
+            {
+                Point p = buf[0];
+                if (Bresenham.InList(points, p))
+                {
+                    pointsGroup.Add(p);
+                    points.Remove(p);
+                    buf.Add(new Point(p.x + 1, p.y));
+                    buf.Add(new Point(p.x - 1, p.y));
+                    buf.Add(new Point(p.x, p.y + 1));
+                    buf.Add(new Point(p.x, p.y - 1));
+                }
+                buf.Remove(p);
+            }
+            foundObj.Add(Objects.GetCenterPoint(pointsGroup));
+        }
+        return foundObj;
+    }
+
+    public static void MarkPoint(List<Point> points, CImage<double> img)
+    {
+        foreach (var p in points)
+        {
+            img[p.x, p.y] = 255;
+        }
+    }
+
+    static Point GetCenterPoint(List<Point> points)
+    {
+        int x=0;
+        int y=0;
+        foreach (var buf in points)
+        {
+            x += buf.x;
+            y += buf.y;
+        }
+        return new Point((int)(x / points.Count()), (int)(y / points.Count()));
+    }
+
+
     public static List<Point> FindObjects(CImage<double> img, out CImage<double> outImg, int r, out double[,] dispersion, double threshold)
      {
          outImg = img.Copy();
@@ -108,13 +155,13 @@ namespace ImageProcessing
                  if (d < threshold)
                  {
                      obj.Add(new Point(j, i));
-                     outImg[j, i] = 255;
                  }
                  dispersion[j, i] = d;
              }
          }
-
-         return obj;
+         List<Point> foundObj = Objects.Skeletonization(obj);
+         MarkPoint(foundObj, outImg);
+         return foundObj;
      }
 
      static double GetMean(CImage<double> img, List<Point> points)
@@ -141,19 +188,5 @@ namespace ImageProcessing
          return d;
      }
 
-    static void DrawCircle(int X, int Y, int L, CImage<double> img, int r)
-    {
-      for (int i = -r; i <= r; i++)
-      {
-        for (int j = -r; j <= r; j++)
-        {
-          if (Math.Sqrt((Math.Abs(i) * (Math.Abs(i)) + (Math.Abs(j)) * (Math.Abs(j)))) <= r)
-          { if ((X+i<img.GetW)&&(Y+j<img.GetH)&&(Y+j>0)&&(X+i>0))
-            img[X + i, Y + j] = L; }
-
-        }
-
-      }
-    }
   }
 }

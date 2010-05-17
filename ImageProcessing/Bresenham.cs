@@ -64,7 +64,7 @@ namespace ImageProcessing
            return buf.ToList();
        }
 
-       public static bool IsBorder(List<Point> points, Point p)
+       public static bool InList(List<Point> points, Point p)
        {
            foreach (Point point in points)
            {
@@ -83,7 +83,7 @@ namespace ImageProcessing
            while (points.Count != 0)
            {
                Point p = points[0];
-               if (!Bresenham.IsBorder(border, p))
+               if (!Bresenham.InList(border, p))
                {
                    border.Add(p);
                    points.Add(new Point(p.x, p.y + 1));

@@ -47,8 +47,8 @@ namespace MMOI
     private void ObjBtn_Click(object sender, EventArgs e)
     {
         
-     List<ImageProcessing.Point> points = Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked);
-     foreach (ImageProcessing.Point p in points)
+     List<ImageProcessing.Point> points = (Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked)).OrderBy(x=>x.x).ThenBy(y=>y.y).ToList();
+        foreach (ImageProcessing.Point p in points)
      {
          ObjList.Items.Add(p);
      }
@@ -65,7 +65,7 @@ namespace MMOI
         FoundObj.Items.Clear();
         double [,] DMap;
         CImage<double> outImg;
-       List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, int.Parse(textBox3.Text), out DMap, double.Parse(textBox2.Text));
+        List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, int.Parse(textBox3.Text), out DMap, double.Parse(textBox2.Text)).OrderBy(x => x.x).ThenBy(y => y.y).ToList();
        pictureBox2.Image = outImg.CImageToBitmap();
        CImage<double> dispersionMatrix = CImage<double>.MatrixToCImage(DMap, param.Size);
        pictureBox1.Image = (CImage<double>.Norm(dispersionMatrix, byte.MaxValue)).CImageToBitmap();

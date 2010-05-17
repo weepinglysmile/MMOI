@@ -180,6 +180,16 @@ namespace ImageProcessing
         }
         imgOut = FourierTransform.BackwardFFT2D(fImg).ToDouble();
 
+        //CImage<double> noise = Background.GenarateNoise(Size, Size, 2);
+
+        //for (int i = 0; i < Size; i++)
+        //{
+        //    for (int j = 0; j < Size; j++)
+        //    {
+        //        imgOut[i, j] = imgOut[i, j] + noise[i, j]* Math.Sqrt(imgOut[i, j]);              
+        //    }
+        //}
+
         //for (int i = 0; i < Size; i++)
         //{
         //  for (int j = 0; j < Size; j++)

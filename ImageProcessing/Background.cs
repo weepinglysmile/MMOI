@@ -16,7 +16,7 @@ namespace ImageProcessing
 
       CImage<Complex> BackgroundImg = Background.GenareteACF(height, width, alfa, Df).ToComplex();
       var fBgImg = FourierTransform.ForwardFFT2D(BackgroundImg);
-      CImage<Complex> NoiseImg = Background.GenarateNoise(height, width).ToComplex();
+      CImage<Complex> NoiseImg = Background.GenarateNoise(height, width, 1).ToComplex();
       var fNImg = FourierTransform.ForwardFFT2D(NoiseImg);
       CImage<Complex> img = new CImage<Complex>(height, width);
       CImage<Complex> sqrt = new CImage<Complex>(height, width);
@@ -44,9 +44,9 @@ namespace ImageProcessing
       return res;
     }
 
-    public static CImage<double> GenarateNoise(int height, int width)
+    public static CImage<double> GenarateNoise(int height, int width, int seed)
     {
-      Random rnd = new Random(1);
+      Random rnd = new Random(seed);
 
       CImage<double> nImg = new CImage<double>(height, width);
       for (int i = 0; i < height; i++)
