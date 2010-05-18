@@ -23,6 +23,8 @@ namespace MMOI
     int size = 256;
     double alfa = 0.5;
     double r=1;
+    double x0 = 100;
+    double thetta = 5;
     
     [CategoryAttribute("Изображение")]
     public int Size
@@ -88,6 +90,20 @@ namespace MMOI
     {
       get { return s1; }
       set { s1 = value; }
+    }
+
+    [CategoryAttribute("ВИТ")]
+    public double X0
+    {
+      get { return x0; }
+      set { x0 = value; }
+    }
+
+    [CategoryAttribute("ВИТ")]
+    public double Thetta
+    {
+      get { return thetta; }
+      set { thetta = value; }
     }
 
     [CategoryAttribute("ВИТ")]

@@ -40,7 +40,7 @@ namespace MMOI
     private void VITBtn_Click(object sender, EventArgs e)
     {
       VITModel model = new VITModel(param.R, param.L1, param.L2, param.S1, param.S2, param.K, 0,0,0, param.Size, param.Size);
-      vitImg = model.AppVIT(bgAndObj, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked);
+      vitImg = model.AppVIT(bgAndObj, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked, NoiseCheckBox.Checked, 5, 100);
       pictureBox2.Image = vitImg.CImageToBitmap();
     }
 
@@ -67,8 +67,9 @@ namespace MMOI
         CImage<double> outImg;
         List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, int.Parse(textBox3.Text), out DMap, double.Parse(textBox2.Text)).OrderBy(x => x.x).ThenBy(y => y.y).ToList();
        pictureBox2.Image = outImg.CImageToBitmap();
-       CImage<double> dispersionMatrix = CImage<double>.MatrixToCImage(DMap, param.Size);
-       pictureBox1.Image = (CImage<double>.Norm(dispersionMatrix, byte.MaxValue)).CImageToBitmap();
+       //CImage<double> dispersionMatrix = CImage<double>.MatrixToCImage(DMap, param.Size);
+
+       pictureBox3.Image = (DispersionMatrix.GetDMatrixImg(DMap, param.Size)).CImageToBitmap();
        foreach (ImageProcessing.Point p in points)
        {
            FoundObj.Items.Add(p);

@@ -158,7 +158,20 @@ namespace ImageProcessing
 
     }
 
-    public CImage<double> AppVIT(CImage<double> img, bool addHopt, bool addH0, bool addHk)
+    double GenerateNormNoise(Random rnd, double tetta, double X0)
+    {
+      int n = 6;
+      double N = 0, S = 0;
+      for (int i = 0; i < n; i++)
+      {
+        S += rnd.NextDouble();
+      }
+      N = (S - n / 2) * Math.Sqrt(12) / Math.Sqrt(n);
+      N *= (tetta / Math.Sqrt(X0));
+      return N;
+    }
+
+    public CImage<double> AppVIT(CImage<double> img, bool addHopt, bool addH0, bool addHk, bool addNoise, double tetta, double X0)
     {
       int height = img.GetH;
       int width = img.GetW;
@@ -166,7 +179,6 @@ namespace ImageProcessing
         GenerateH0(addH0);
         GenerateHk(addHk);
         GenerateHopt(addHopt);
-        //GenerateHb();
         GenerateVIT();
                                   
         CImage<Complex> fImg = FourierTransform.ForwardFFT2D(img.ToComplex());
@@ -179,17 +191,17 @@ namespace ImageProcessing
           }
         }
         imgOut = FourierTransform.BackwardFFT2D(fImg).ToDouble();
-
-        //CImage<double> noise = Background.GenarateNoise(Size, Size, 2);
-
-        //for (int i = 0; i < Size; i++)
-        //{
-        //    for (int j = 0; j < Size; j++)
-        //    {
-        //        imgOut[i, j] = imgOut[i, j] + noise[i, j]* Math.Sqrt(imgOut[i, j]);              
-        //    }
-        //}
-
+        if (addNoise)
+        {
+          Random rnd = new Random(2);
+          for (int i = 0; i < Size; i++)
+          {
+            for (int j = 0; j < Size; j++)
+            {
+              imgOut[i, j] = imgOut[i, j] + GenerateNormNoise(rnd, tetta, X0) * Math.Sqrt(imgOut[i, j]);
+            }
+          }
+        }
         //for (int i = 0; i < Size; i++)
         //{
         //  for (int j = 0; j < Size; j++)

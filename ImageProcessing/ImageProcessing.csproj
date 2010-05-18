@@ -58,9 +58,11 @@
     <Compile Include="Bresenham.cs" />
     <Compile Include="CImage.cs" />
     <Compile Include="Complex.cs" />
+    <Compile Include="DispersionMatrix.cs" />
     <Compile Include="FourierTransform.cs" />
     <Compile Include="ImageExtensions.cs" />
     <Compile Include="Objects.cs" />
+    <Compile Include="OtsuMethod.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VITModel.cs" />

@@ -159,9 +159,9 @@ namespace ImageProcessing
                  dispersion[j, i] = d;
              }
          }
-         List<Point> foundObj = Objects.Skeletonization(obj);
-         MarkPoint(foundObj, outImg);
-         return foundObj;
+        // List<Point> foundObj = Objects.Skeletonization(obj);
+         MarkPoint(obj, outImg);
+         return obj;
      }
 
      static double GetMean(CImage<double> img, List<Point> points)

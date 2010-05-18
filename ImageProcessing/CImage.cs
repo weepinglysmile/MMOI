@@ -118,17 +118,18 @@ namespace ImageProcessing
         return max;
     }
 
-    public static CImage<double> Norm(CImage<double> img, double maxValue ) 
+    public static CImage<double> Norm(CImage<double> img, double maxValue) 
     {
         double max = img.GetMax();
+        CImage<double> outImg = new CImage<double>(img.GetH, img.GetW);
         for (int i = 0; i < img.GetH; i++)
         {
             for (int j = 0; j < img.GetW; j++)
             {
-                img[i, j] = (img[i, j] / max) * maxValue;
+                outImg[i, j] = (img[i, j] / max) * maxValue;
             }
         }
-        return img;
+        return outImg;
     }
   }
 
