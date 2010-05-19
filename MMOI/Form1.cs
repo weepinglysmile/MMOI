@@ -64,13 +64,17 @@ namespace MMOI
     {
         FoundObj.Items.Clear();
         double [,] DMap;
-        CImage<double> outImg;
-        List<ImageProcessing.Point> points = Objects.FindObjects(vitImg, out outImg, int.Parse(textBox3.Text), out DMap, double.Parse(textBox2.Text)).OrderBy(x => x.x).ThenBy(y => y.y).ToList();
-       pictureBox2.Image = outImg.CImageToBitmap();
-       //CImage<double> dispersionMatrix = CImage<double>.MatrixToCImage(DMap, param.Size);
-
-       pictureBox3.Image = (DispersionMatrix.GetDMatrixImg(DMap, param.Size)).CImageToBitmap();
-       foreach (ImageProcessing.Point p in points)
+        List<ImageProcessing.Point> points; 
+        Objects.GetDispMatrix(vitImg, int.Parse(textBox3.Text), out DMap);
+      
+       CImage<double> origDispersionMatrix;
+       CImage<double> DMatrix = DispersionMatrix.GetDMatrixImg(DMap, out origDispersionMatrix, param.Size, vitImg, param.Sigma, param.X0);
+       pictureBox3.Image = DMatrix.CImageToBitmap();
+       points = Objects.GetFoundObj(double.Parse(textBox2.Text), origDispersionMatrix);
+       CImage<double> img = vitImg.Copy();
+       Objects.MarkPoint(points, img);
+        pictureBox2.Image = img.CImageToBitmap();
+        foreach (ImageProcessing.Point p in points)
        {
            FoundObj.Items.Add(p);
        }

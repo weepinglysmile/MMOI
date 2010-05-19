@@ -132,11 +132,23 @@ namespace ImageProcessing
         return new Point((int)(x / points.Count()), (int)(y / points.Count()));
     }
 
+    public static List<Point> GetFoundObj(double threshold, CImage<double> img)
+    {
+        List<Point> points = new List<Point>();
+        for (int i = 0; i < img.GetH; i++)
+        {
+            for (int j = 0; j < img.GetW; j++)
+            {
+                if (img[i, j] < threshold)
+                    points.Add(new Point(i, j));
+            }     
+        }
+        return points;
+    }
 
-    public static List<Point> FindObjects(CImage<double> img, out CImage<double> outImg, int r, out double[,] dispersion, double threshold)
+
+    public static void GetDispMatrix(CImage<double> img, int r, out double[,] dispersion)
      {
-         outImg = img.Copy();
-         List<Point> obj = new List<Point>();
          int heigth = img.GetH;
          int width = img.GetW;
          dispersion = new double[width, heigth];
@@ -152,16 +164,9 @@ namespace ImageProcessing
                  }
                  double mean = GetMean(img, c);
                  double d = GetDispersion(img, c, mean);
-                 if (d < threshold)
-                 {
-                     obj.Add(new Point(j, i));
-                 }
                  dispersion[j, i] = d;
              }
          }
-        // List<Point> foundObj = Objects.Skeletonization(obj);
-         MarkPoint(obj, outImg);
-         return obj;
      }
 
      static double GetMean(CImage<double> img, List<Point> points)

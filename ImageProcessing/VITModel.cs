@@ -171,7 +171,7 @@ namespace ImageProcessing
       return N;
     }
 
-    public CImage<double> AppVIT(CImage<double> img, bool addHopt, bool addH0, bool addHk, bool addNoise, double tetta, double X0)
+    public CImage<double> AppVIT(CImage<double> img, bool addHopt, bool addH0, bool addHk, bool addNoise, double sigma, double X0)
     {
       int height = img.GetH;
       int width = img.GetW;
@@ -198,7 +198,7 @@ namespace ImageProcessing
           {
             for (int j = 0; j < Size; j++)
             {
-              imgOut[i, j] = imgOut[i, j] + GenerateNormNoise(rnd, tetta, X0) * Math.Sqrt(imgOut[i, j]);
+              imgOut[i, j] = imgOut[i, j] + GenerateNormNoise(rnd, sigma, X0) * Math.Sqrt(imgOut[i, j]);
             }
           }
         }

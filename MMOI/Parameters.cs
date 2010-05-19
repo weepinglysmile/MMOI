@@ -24,7 +24,7 @@ namespace MMOI
     double alfa = 0.5;
     double r=1;
     double x0 = 100;
-    double thetta = 5;
+    double sigma = 5;
     
     [CategoryAttribute("Изображение")]
     public int Size
@@ -100,10 +100,10 @@ namespace MMOI
     }
 
     [CategoryAttribute("ВИТ")]
-    public double Thetta
+    public double Sigma
     {
-      get { return thetta; }
-      set { thetta = value; }
+      get { return sigma; }
+      set { sigma = value; }
     }
 
     [CategoryAttribute("ВИТ")]
