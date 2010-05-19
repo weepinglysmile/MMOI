@@ -18,8 +18,7 @@ namespace ImageProcessing
       double originalThrh = maxValue / byte.MaxValue * threshold;
       Thresholding(img, originalThrh);
       
-      CImgInv(img);
-      dImg = CImage<double>.Norm(img, byte.MaxValue);
+      dImg = CImage<double>.Norm(CImgInv(img), byte.MaxValue);
       return dImg;
     }
 
@@ -34,17 +33,18 @@ namespace ImageProcessing
         }
       }
     }
-    static void CImgInv(CImage<double> img)
+    static CImage<double> CImgInv(CImage<double> img)
     {
+        CImage<double> OutImg = new CImage<double>(img.GetH, img.GetW);
       double max = img.GetMax();
       for (int i = 0; i < img.GetW; i++)
       {
         for (int j = 0; j < img.GetH; j++)
         {
-          img[i, j] = max - img[i, j];
-        }
-        
+          OutImg[i, j] = max - img[i, j];
+        }  
       }
+      return OutImg;
     }
 
     static double GetNoiseDispersion(int i, int j, CImage<double> img, double sigma, double X0)
