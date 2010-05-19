@@ -45,8 +45,7 @@ namespace MMOI
     }
 
     private void ObjBtn_Click(object sender, EventArgs e)
-    {
-        
+    {   
      List<ImageProcessing.Point> points = (Objects.GetObjects(background, out bgAndObj, param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked)).OrderBy(x=>x.x).ThenBy(y=>y.y).ToList();
         foreach (ImageProcessing.Point p in points)
      {
