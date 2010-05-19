@@ -221,7 +221,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 16;
-            this.textBox3.Text = "4";
+            this.textBox3.Text = "6";
             // 
             // label3
             // 
@@ -247,7 +247,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "1";
+            this.textBox2.Text = "20";
             // 
             // Do
             // 

@@ -158,7 +158,7 @@ namespace ImageProcessing
 
     }
 
-    double GenerateNormNoise(Random rnd, double tetta, double X0)
+    double GenerateNormNoise(Random rnd, double sigma, double X0)
     {
       int n = 6;
       double N = 0, S = 0;
@@ -167,7 +167,7 @@ namespace ImageProcessing
         S += rnd.NextDouble();
       }
       N = (S - n / 2) * Math.Sqrt(12) / Math.Sqrt(n);
-      N *= (tetta / Math.Sqrt(X0));
+      N *= (sigma / Math.Sqrt(X0));
       return N;
     }
 
@@ -193,12 +193,21 @@ namespace ImageProcessing
         imgOut = FourierTransform.BackwardFFT2D(fImg).ToDouble();
         if (addNoise)
         {
-          Random rnd = new Random(2);
+          Random rnd = new Random(7);
           for (int i = 0; i < Size; i++)
           {
             for (int j = 0; j < Size; j++)
             {
-              imgOut[i, j] = imgOut[i, j] + GenerateNormNoise(rnd, sigma, X0) * Math.Sqrt(imgOut[i, j]);
+                double buf = imgOut[i, j] + GenerateNormNoise(rnd, sigma, X0) * Math.Sqrt(imgOut[i, j]);
+                if (buf > 255)
+                    imgOut[i, j] = 255;
+                else
+                    if (buf < 0)
+                        imgOut[i, j] = 0;
+                    else imgOut[i, j] = buf;
+               
+                //imgOut[i, j] = buf < 255 ? buf : 255;
+                //imgOut[i, j] = buf > 0 ? buf : 0;
             }
           }
         }

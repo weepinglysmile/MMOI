@@ -118,6 +118,25 @@ namespace ImageProcessing
         return max;
     }
 
+    public T GetMin()
+    {
+        T max = this[0, 0];
+        bool f;
+        for (int i = 0; i < GetH; i++)
+        {
+            for (int j = 0; j < GetW; j++)
+            {
+                f = max.CompareTo(this[i, j]) >= 0;
+                if (f)
+                {
+                    max = this[i, j];
+                }
+            }
+
+        }
+        return max;
+    }
+
     public static CImage<double> Norm(CImage<double> img, double maxValue) 
     {
         double max = img.GetMax();

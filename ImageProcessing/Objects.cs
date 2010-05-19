@@ -22,7 +22,7 @@ namespace ImageProcessing
       int ObjNumber = GetNumber(height, width, Q, r);
       Random rndX = new Random(1);
       Random rndY = new Random(9);
-      Random rndL = new Random(6);
+      Random rndL = new Random(5);
       for (int i = 0; i < ObjNumber; i++)
       {
         int X, Y; 
@@ -103,7 +103,11 @@ namespace ImageProcessing
                     buf.Add(new Point(p.x + 1, p.y));
                     buf.Add(new Point(p.x - 1, p.y));
                     buf.Add(new Point(p.x, p.y + 1));
-                    buf.Add(new Point(p.x, p.y - 1));
+                    buf.Add(new Point(p.x - 1, p.y - 1));
+                    buf.Add(new Point(p.x + 1, p.y + 1));
+                    buf.Add(new Point(p.x - 1, p.y - 1));
+                    buf.Add(new Point(p.x - 1, p.y + 1));
+                    buf.Add(new Point(p.x + 1, p.y - 1));
                 }
                 buf.Remove(p);
             }

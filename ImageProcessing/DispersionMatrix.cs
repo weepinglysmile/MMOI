@@ -11,7 +11,7 @@ namespace ImageProcessing
     {
       CImage<double> dImg = new CImage<double>(Size, Size);
       img = CImage<double>.MatrixToCImage(dMatrix, Size);
-      SubtractNoiseDisp(img, sigma, X0);
+      SubtractNoiseDisp(img, sigma, X0, InImg);
       double maxValue = img.GetMax();
       dImg = CImage<double>.Norm(img, byte.MaxValue);
       int threshold = OtsuMethod.GetThreshold(dImg);
@@ -61,16 +61,32 @@ namespace ImageProcessing
         return D;
     }
 
-    static void SubtractNoiseDisp(CImage<double> img, double sigma, double X0)
+    static void SubtractNoiseDisp(CImage<double> DImg, double sigma, double X0, CImage<double> img)
     {
-        CImage<double> noiseDisp = new CImage<double>(img.GetW, img.GetH);
-        for (int i = 0; i < img.GetW; i++)
+        CImage<double> noiseDisp = new CImage<double>(DImg.GetW, DImg.GetH);
+        for (int i = 0; i < DImg.GetW; i++)
         {
-            for (int j = 0; j < img.GetH; j++)
+            for (int j = 0; j < DImg.GetH; j++)
             {
-                img[i,j] -= GetNoiseDispersion(i, j, img, sigma, X0);
+                double buf = DImg[i, j] - GetNoiseDispersion(i, j, img, sigma, X0);
+                //if (buf < 0)
+                //    DImg[i, j] = 0;
+                //else
+                    DImg[i, j] = buf;
+                //img[i, j] = buf < 0 ? 0 : buf;
             }
-        } 
+        }
+        double min = DImg.GetMin();
+        if (min < 0)
+        {
+            for (int i = 0; i < DImg.GetH; i++)
+            {
+                for (int j = 0; j < DImg.GetW; j++)
+                {
+                    DImg[i, j] -= min;
+                }
+            }
+        }
     }
 
   }

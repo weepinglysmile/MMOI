@@ -40,7 +40,7 @@ namespace MMOI
     private void VITBtn_Click(object sender, EventArgs e)
     {
       VITModel model = new VITModel(param.R, param.L1, param.L2, param.S1, param.S2, param.K, 0,0,0, param.Size, param.Size);
-      vitImg = model.AppVIT(bgAndObj, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked, NoiseCheckBox.Checked, 5, 100);
+      vitImg = model.AppVIT(bgAndObj, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked, NoiseCheckBox.Checked, param.Sigma, param.X0);
       pictureBox2.Image = vitImg.CImageToBitmap();
     }
 
@@ -72,6 +72,7 @@ namespace MMOI
        pictureBox3.Image = DMatrix.CImageToBitmap();
        points = Objects.GetFoundObj(double.Parse(textBox2.Text), origDispersionMatrix);
        CImage<double> img = vitImg.Copy();
+       points = Objects.Skeletonization(points);
        Objects.MarkPoint(points, img);
         pictureBox2.Image = img.CImageToBitmap();
         foreach (ImageProcessing.Point p in points)
@@ -86,10 +87,7 @@ namespace MMOI
         textBox1.Text = "(" + e.X.ToString() + ", " + e.Y.ToString() + ")";
     }
 
-    private void button1_Click_1(object sender, EventArgs e)
-    {
 
-    }
 
   }
 }
