@@ -175,12 +175,14 @@ namespace ImageProcessing
     {
       int height = img.GetH;
       int width = img.GetW;
-      CImage<double> imgOut = new CImage<double>(height, width);
+      //CImage<double> imgOut = new CImage<double>(height, width);
+      CImage<double> imgOut = new CImage<double>(oSize, oSize);  
+  
         GenerateH0(addH0);
         GenerateHk(addHk);
         GenerateHopt(addHopt);
         GenerateVIT();
-                                  
+
         CImage<Complex> fImg = FourierTransform.ForwardFFT2D(img.ToComplex());
         CImage<Complex> fVIT = VIT.ToComplex();
         for (int i = 0; i < Size; i++)
@@ -190,13 +192,23 @@ namespace ImageProcessing
             fImg[i, j] = fImg[i, j] * fVIT[i, j];
           }
         }
-        imgOut = FourierTransform.BackwardFFT2D(fImg).ToDouble();
+        img = FourierTransform.BackwardFFT2D(fImg).ToDouble();
+
+        int k = Size / oSize;
+        for (int i = 0; i < oSize; i++)
+        {
+            for (int j = 0; j < oSize; j++)
+            {
+                imgOut[i, j] = img[i * k, j * k];
+            }
+        }
+
         if (addNoise)
         {
           Random rnd = new Random(7);
-          for (int i = 0; i < Size; i++)
+          for (int i = 0; i < oSize; i++)
           {
-            for (int j = 0; j < Size; j++)
+              for (int j = 0; j < oSize; j++)
             {
                 double buf = imgOut[i, j] + GenerateNormNoise(rnd, sigma, X0) * Math.Sqrt(imgOut[i, j]);
                 if (buf > 255)
@@ -223,6 +235,8 @@ namespace ImageProcessing
 
       return imgOut;
     }
+
+   
 
   }
 }

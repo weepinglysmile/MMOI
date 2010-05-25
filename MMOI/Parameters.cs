@@ -25,12 +25,19 @@ namespace MMOI
     double r=1;
     double x0 = 100;
     double sigma = 5;
+    int ImgSize = 256;
     
-    [CategoryAttribute("Изображение")]
+    [CategoryAttribute("ВИТ")]
     public int Size
     {
       get { return size; }
       set { size = value; }
+    }
+    [CategoryAttribute("Изображение")]
+    public int IMGSize
+    {
+        get { return ImgSize; }
+        set { ImgSize = value; }
     }
 
     [CategoryAttribute("Объекты")]
