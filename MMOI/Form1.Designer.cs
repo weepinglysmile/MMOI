@@ -40,6 +40,12 @@
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.SKOTB12 = new System.Windows.Forms.TextBox();
+            this.SKOTB24 = new System.Windows.Forms.TextBox();
+            this.VITAnalyssBTN = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.SKOErrNormTB = new System.Windows.Forms.TextBox();
             this.MErrNormTB = new System.Windows.Forms.TextBox();
@@ -66,13 +72,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.VITAnalyssBTN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Do = new System.Windows.Forms.Button();
             this.FoundObj = new System.Windows.Forms.ListBox();
-            this.SKOTB24 = new System.Windows.Forms.TextBox();
-            this.SKOTB12 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ObjList = new System.Windows.Forms.ListBox();
             this.VITBtn = new System.Windows.Forms.Button();
             this.ObjBtn = new System.Windows.Forms.Button();
@@ -88,6 +91,7 @@
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -105,7 +109,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 273);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 254);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -122,7 +126,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(728, 267);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(728, 248);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel1
@@ -132,15 +136,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 261);
+            this.panel1.Size = new System.Drawing.Size(236, 242);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 261);
+            this.pictureBox1.Size = new System.Drawing.Size(236, 242);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -153,15 +156,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(245, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(236, 261);
+            this.panel2.Size = new System.Drawing.Size(236, 242);
             this.panel2.TabIndex = 2;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(236, 261);
+            this.pictureBox2.Size = new System.Drawing.Size(236, 242);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -174,15 +176,14 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(487, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 261);
+            this.panel5.Size = new System.Drawing.Size(238, 242);
             this.panel5.TabIndex = 3;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(238, 261);
+            this.pictureBox3.Size = new System.Drawing.Size(238, 242);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -193,7 +194,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(737, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(194, 267);
+            this.panel3.Size = new System.Drawing.Size(194, 248);
             this.panel3.TabIndex = 1;
             // 
             // propertyGrid1
@@ -201,7 +202,7 @@
             this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(194, 267);
+            this.propertyGrid1.Size = new System.Drawing.Size(194, 248);
             this.propertyGrid1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -215,33 +216,86 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 207F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(940, 486);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(940, 482);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.groupBox4);
             this.panel4.Controls.Add(this.groupBox3);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Controls.Add(this.VITAnalyssBTN);
             this.panel4.Controls.Add(this.Do);
             this.panel4.Controls.Add(this.FoundObj);
-            this.panel4.Controls.Add(this.SKOTB24);
-            this.panel4.Controls.Add(this.SKOTB12);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ObjList);
             this.panel4.Controls.Add(this.VITBtn);
             this.panel4.Controls.Add(this.ObjBtn);
             this.panel4.Controls.Add(this.BackgroundBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 282);
+            this.panel4.Location = new System.Drawing.Point(3, 263);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(934, 201);
+            this.panel4.Size = new System.Drawing.Size(934, 216);
             this.panel4.TabIndex = 1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.SKOTB12);
+            this.groupBox4.Controls.Add(this.SKOTB24);
+            this.groupBox4.Controls.Add(this.VITAnalyssBTN);
+            this.groupBox4.Location = new System.Drawing.Point(105, 131);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(336, 80);
+            this.groupBox4.TabIndex = 22;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Выбор шагов дискретизации";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(167, 48);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "SE24";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(167, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(33, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "SE12";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // SKOTB12
+            // 
+            this.SKOTB12.Location = new System.Drawing.Point(209, 19);
+            this.SKOTB12.Name = "SKOTB12";
+            this.SKOTB12.Size = new System.Drawing.Size(102, 20);
+            this.SKOTB12.TabIndex = 10;
+            // 
+            // SKOTB24
+            // 
+            this.SKOTB24.Location = new System.Drawing.Point(209, 45);
+            this.SKOTB24.Name = "SKOTB24";
+            this.SKOTB24.Size = new System.Drawing.Size(102, 20);
+            this.SKOTB24.TabIndex = 10;
+            // 
+            // VITAnalyssBTN
+            // 
+            this.VITAnalyssBTN.Location = new System.Drawing.Point(6, 26);
+            this.VITAnalyssBTN.Name = "VITAnalyssBTN";
+            this.VITAnalyssBTN.Size = new System.Drawing.Size(144, 35);
+            this.VITAnalyssBTN.TabIndex = 12;
+            this.VITAnalyssBTN.Text = "СКО изображений ";
+            this.VITAnalyssBTN.UseVisualStyleBackColor = true;
+            this.VITAnalyssBTN.Click += new System.EventHandler(this.VITAnalyssBTN_Click);
             // 
             // groupBox3
             // 
@@ -257,47 +311,52 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(653, 11);
+            this.groupBox3.Location = new System.Drawing.Point(664, 11);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(267, 181);
+            this.groupBox3.Size = new System.Drawing.Size(267, 200);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Результаты исследования";
             // 
             // SKOErrNormTB
             // 
-            this.SKOErrNormTB.Location = new System.Drawing.Point(202, 145);
+            this.SKOErrNormTB.Location = new System.Drawing.Point(202, 172);
             this.SKOErrNormTB.Name = "SKOErrNormTB";
             this.SKOErrNormTB.Size = new System.Drawing.Size(58, 20);
             this.SKOErrNormTB.TabIndex = 1;
+            this.SKOErrNormTB.TextChanged += new System.EventHandler(this.SKOErrNormTB_TextChanged);
             // 
             // MErrNormTB
             // 
-            this.MErrNormTB.Location = new System.Drawing.Point(202, 120);
+            this.MErrNormTB.Location = new System.Drawing.Point(203, 142);
             this.MErrNormTB.Name = "MErrNormTB";
             this.MErrNormTB.Size = new System.Drawing.Size(58, 20);
             this.MErrNormTB.TabIndex = 1;
+            this.MErrNormTB.TextChanged += new System.EventHandler(this.MErrNormTB_TextChanged);
             // 
             // LostAndFalseObjTB
             // 
-            this.LostAndFalseObjTB.Location = new System.Drawing.Point(202, 95);
+            this.LostAndFalseObjTB.Location = new System.Drawing.Point(203, 112);
             this.LostAndFalseObjTB.Name = "LostAndFalseObjTB";
             this.LostAndFalseObjTB.Size = new System.Drawing.Size(58, 20);
             this.LostAndFalseObjTB.TabIndex = 1;
+            this.LostAndFalseObjTB.TextChanged += new System.EventHandler(this.LostAndFalseObjTB_TextChanged);
             // 
             // FalseObjTB
             // 
-            this.FalseObjTB.Location = new System.Drawing.Point(202, 70);
+            this.FalseObjTB.Location = new System.Drawing.Point(202, 81);
             this.FalseObjTB.Name = "FalseObjTB";
             this.FalseObjTB.Size = new System.Drawing.Size(58, 20);
             this.FalseObjTB.TabIndex = 1;
+            this.FalseObjTB.TextChanged += new System.EventHandler(this.FalseObjTB_TextChanged);
             // 
             // LostObgTB
             // 
-            this.LostObgTB.Location = new System.Drawing.Point(202, 45);
+            this.LostObgTB.Location = new System.Drawing.Point(202, 51);
             this.LostObgTB.Name = "LostObgTB";
             this.LostObgTB.Size = new System.Drawing.Size(58, 20);
             this.LostObgTB.TabIndex = 1;
+            this.LostObgTB.TextChanged += new System.EventHandler(this.LostObgTB_TextChanged);
             // 
             // FoundObjTB
             // 
@@ -309,7 +368,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 148);
+            this.label11.Location = new System.Drawing.Point(13, 181);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(136, 13);
             this.label11.TabIndex = 0;
@@ -318,7 +377,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 116);
+            this.label10.Location = new System.Drawing.Point(13, 143);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 26);
             this.label10.TabIndex = 0;
@@ -327,7 +386,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 98);
+            this.label9.Location = new System.Drawing.Point(13, 113);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(146, 13);
             this.label9.TabIndex = 0;
@@ -336,7 +395,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 73);
+            this.label8.Location = new System.Drawing.Point(13, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(159, 13);
             this.label8.TabIndex = 0;
@@ -345,7 +404,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 48);
+            this.label7.Location = new System.Drawing.Point(13, 53);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 13);
             this.label7.TabIndex = 0;
@@ -363,7 +422,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(540, 11);
+            this.label5.Location = new System.Drawing.Point(554, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 26);
             this.label5.TabIndex = 20;
@@ -372,7 +431,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(428, 11);
+            this.label4.Location = new System.Drawing.Point(449, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 26);
             this.label4.TabIndex = 19;
@@ -385,9 +444,9 @@
             this.groupBox2.Controls.Add(this.HkCheckBox);
             this.groupBox2.Controls.Add(this.NoiseCheckBox);
             this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(91, 14);
+            this.groupBox2.Location = new System.Drawing.Point(105, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(158, 152);
+            this.groupBox2.Size = new System.Drawing.Size(173, 112);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Модель наблюдения";
@@ -410,7 +469,7 @@
             this.H0CheckBox.AutoSize = true;
             this.H0CheckBox.Checked = true;
             this.H0CheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.H0CheckBox.Location = new System.Drawing.Point(13, 43);
+            this.H0CheckBox.Location = new System.Drawing.Point(13, 46);
             this.H0CheckBox.Name = "H0CheckBox";
             this.H0CheckBox.Size = new System.Drawing.Size(40, 17);
             this.H0CheckBox.TabIndex = 4;
@@ -422,7 +481,7 @@
             this.HkCheckBox.AutoSize = true;
             this.HkCheckBox.Checked = true;
             this.HkCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.HkCheckBox.Location = new System.Drawing.Point(13, 67);
+            this.HkCheckBox.Location = new System.Drawing.Point(61, 46);
             this.HkCheckBox.Name = "HkCheckBox";
             this.HkCheckBox.Size = new System.Drawing.Size(40, 17);
             this.HkCheckBox.TabIndex = 5;
@@ -434,7 +493,7 @@
             this.NoiseCheckBox.AutoSize = true;
             this.NoiseCheckBox.Checked = true;
             this.NoiseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.NoiseCheckBox.Location = new System.Drawing.Point(13, 91);
+            this.NoiseCheckBox.Location = new System.Drawing.Point(109, 46);
             this.NoiseCheckBox.Name = "NoiseCheckBox";
             this.NoiseCheckBox.Size = new System.Drawing.Size(48, 17);
             this.NoiseCheckBox.TabIndex = 6;
@@ -446,7 +505,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(13, 107);
+            this.checkBox1.Location = new System.Drawing.Point(13, 69);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(150, 30);
             this.checkBox1.TabIndex = 7;
@@ -459,7 +518,9 @@
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(260, 14);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Location = new System.Drawing.Point(279, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(162, 107);
             this.groupBox1.TabIndex = 17;
@@ -477,100 +538,76 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(85, 55);
+            this.textBox3.Location = new System.Drawing.Point(96, 46);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(66, 20);
+            this.textBox3.Size = new System.Drawing.Size(60, 20);
             this.textBox3.TabIndex = 16;
             this.textBox3.Text = "6";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(85, 19);
+            this.textBox2.Location = new System.Drawing.Point(96, 20);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(66, 20);
+            this.textBox2.Size = new System.Drawing.Size(60, 20);
             this.textBox2.TabIndex = 13;
             this.textBox2.Text = "20";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 55);
+            this.label3.Location = new System.Drawing.Point(5, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 26);
             this.label3.TabIndex = 15;
             this.label3.Text = "Радиус окна \r\nобработки";
             // 
-            // VITAnalyssBTN
+            // label1
             // 
-            this.VITAnalyssBTN.Location = new System.Drawing.Point(9, 169);
-            this.VITAnalyssBTN.Name = "VITAnalyssBTN";
-            this.VITAnalyssBTN.Size = new System.Drawing.Size(76, 23);
-            this.VITAnalyssBTN.TabIndex = 12;
-            this.VITAnalyssBTN.Text = "VitAnalysis";
-            this.VITAnalyssBTN.UseVisualStyleBackColor = true;
-            this.VITAnalyssBTN.Click += new System.EventHandler(this.VITAnalyssBTN_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 26);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Координаты точки \r\nна изображении";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(55, 20);
+            this.textBox1.TabIndex = 10;
             // 
             // Do
             // 
-            this.Do.Location = new System.Drawing.Point(9, 130);
+            this.Do.Location = new System.Drawing.Point(10, 168);
             this.Do.Name = "Do";
-            this.Do.Size = new System.Drawing.Size(76, 23);
+            this.Do.Size = new System.Drawing.Size(87, 41);
             this.Do.TabIndex = 12;
-            this.Do.Text = "Do";
+            this.Do.Text = "Обработка изображений";
             this.Do.UseVisualStyleBackColor = true;
             this.Do.Click += new System.EventHandler(this.Do_Click);
             // 
             // FoundObj
             // 
             this.FoundObj.FormattingEnabled = true;
-            this.FoundObj.Location = new System.Drawing.Point(543, 43);
+            this.FoundObj.Location = new System.Drawing.Point(558, 38);
             this.FoundObj.Name = "FoundObj";
-            this.FoundObj.Size = new System.Drawing.Size(100, 121);
+            this.FoundObj.Size = new System.Drawing.Size(100, 173);
             this.FoundObj.TabIndex = 11;
-            // 
-            // SKOTB24
-            // 
-            this.SKOTB24.Location = new System.Drawing.Point(226, 172);
-            this.SKOTB24.Name = "SKOTB24";
-            this.SKOTB24.Size = new System.Drawing.Size(102, 20);
-            this.SKOTB24.TabIndex = 10;
-            // 
-            // SKOTB12
-            // 
-            this.SKOTB12.Location = new System.Drawing.Point(91, 171);
-            this.SKOTB12.Name = "SKOTB12";
-            this.SKOTB12.Size = new System.Drawing.Size(102, 20);
-            this.SKOTB12.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(367, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(266, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 26);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Координаты точки \r\nна изображении";
             // 
             // ObjList
             // 
             this.ObjList.FormattingEnabled = true;
-            this.ObjList.Location = new System.Drawing.Point(428, 43);
+            this.ObjList.Location = new System.Drawing.Point(450, 38);
             this.ObjList.Name = "ObjList";
-            this.ObjList.Size = new System.Drawing.Size(102, 121);
+            this.ObjList.Size = new System.Drawing.Size(102, 173);
             this.ObjList.TabIndex = 8;
             // 
             // VITBtn
             // 
-            this.VITBtn.Location = new System.Drawing.Point(9, 94);
+            this.VITBtn.Location = new System.Drawing.Point(10, 118);
             this.VITBtn.Name = "VITBtn";
-            this.VITBtn.Size = new System.Drawing.Size(75, 23);
+            this.VITBtn.Size = new System.Drawing.Size(87, 41);
             this.VITBtn.TabIndex = 2;
             this.VITBtn.Text = "ВИТ";
             this.VITBtn.UseVisualStyleBackColor = true;
@@ -578,9 +615,9 @@
             // 
             // ObjBtn
             // 
-            this.ObjBtn.Location = new System.Drawing.Point(9, 58);
+            this.ObjBtn.Location = new System.Drawing.Point(10, 68);
             this.ObjBtn.Name = "ObjBtn";
-            this.ObjBtn.Size = new System.Drawing.Size(75, 23);
+            this.ObjBtn.Size = new System.Drawing.Size(87, 41);
             this.ObjBtn.TabIndex = 1;
             this.ObjBtn.Text = "Объекты";
             this.ObjBtn.UseVisualStyleBackColor = true;
@@ -588,9 +625,9 @@
             // 
             // BackgroundBtn
             // 
-            this.BackgroundBtn.Location = new System.Drawing.Point(9, 22);
+            this.BackgroundBtn.Location = new System.Drawing.Point(10, 18);
             this.BackgroundBtn.Name = "BackgroundBtn";
-            this.BackgroundBtn.Size = new System.Drawing.Size(75, 23);
+            this.BackgroundBtn.Size = new System.Drawing.Size(87, 41);
             this.BackgroundBtn.TabIndex = 0;
             this.BackgroundBtn.Text = "Фон";
             this.BackgroundBtn.UseVisualStyleBackColor = true;
@@ -600,7 +637,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 486);
+            this.ClientSize = new System.Drawing.Size(940, 482);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -619,6 +656,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -680,6 +719,9 @@
         private System.Windows.Forms.Button VITAnalyssBTN;
         private System.Windows.Forms.TextBox SKOTB12;
         private System.Windows.Forms.TextBox SKOTB24;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 

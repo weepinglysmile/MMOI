@@ -25,7 +25,7 @@ namespace MMOI
     double r=1;
     double x0 = 100;
     double sigma = 5;
-    int ImgSize = 256;
+    int ImgSize = 1024;
     
     [CategoryAttribute("ВИТ")]
     public int Size

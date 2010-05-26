@@ -14,6 +14,7 @@ namespace MMOI
   {
     Parameters param = new Parameters();
     CImage<double> background;
+    CImage<double> bgAndObj_big;
     CImage<double> bgAndObj;
     CImage<double> vitImg;
     List<ImageProcessing.Point> obj;
@@ -41,21 +42,38 @@ namespace MMOI
 
     private void VITBtn_Click(object sender, EventArgs e)
     {
-      VITModel model = new VITModel(param.R, param.L1, param.L2, param.S1, param.S2, param.K, 0,0,0, param.Size, param.IMGSize);
+      VITModel model = new VITModel(param.R, param.L1, param.L2, param.S1, param.S2, param.K, 0,0,0, param.Size, bgAndObj.GetH);
       vitImg = model.AppVIT(bgAndObj, OptSysCheckBox.Checked, H0CheckBox.Checked, HkCheckBox.Checked, NoiseCheckBox.Checked, param.Sigma, param.X0);
       pictureBox2.Image = vitImg.CImageToBitmap();
       vitImg.CImageToBitmap().Save("vit.bmp");
     }
 
     private void ObjBtn_Click(object sender, EventArgs e)
-    {   
-    obj = (Objects.GetObjects(background, out bgAndObj, param.IMGSize/256* param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked)).OrderBy(x=>x.x).ThenBy(y=>y.y).ToList();
-    bgAndObj.CImageToBitmap().Save("img.bmp");
-    foreach (ImageProcessing.Point p in obj)
+    {
+        ObjList.Items.Clear();
+    List<ImageProcessing.Point> obj_big = (Objects.GetObjects(background, out bgAndObj_big, param.IMGSize/256* param.Radius, param.Q, param.Xmin, param.Xmax, !checkBox1.Checked)).OrderBy(x=>x.x).ThenBy(y=>y.y).ToList();
+    bgAndObj_big.CImageToBitmap().Save("img.bmp");
+
+    bgAndObj = new CImage<double>(256, 256);
+    int k = param.IMGSize/256;
+    for (int i = 0; i < 256; i++)
+    {
+        for (int j = 0; j < 256; j++)
+        {
+            bgAndObj[i, j] = bgAndObj_big[i * k, j * k];
+        }
+    }
+    //pictureBox2.Image = bgAndObj.CImageToBitmap();
+   obj = new List<ImageProcessing.Point>();
+    foreach (ImageProcessing.Point p in obj_big)
      {
-         ObjList.Items.Add(p);
+        obj.Add(new ImageProcessing.Point(p.x/k, p.y/k));
      }
-        pictureBox1.Image = bgAndObj.CImageToBitmap();
+    foreach (ImageProcessing.Point p in obj)
+    {
+        ObjList.Items.Add(p);
+    }
+    pictureBox1.Image = bgAndObj.CImageToBitmap();
     }
 
     private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -87,8 +105,8 @@ namespace MMOI
         List<ImageProcessing.Point> inexactObj = Research.InexactObj(obj, points, param.Radius, out objects);
         List<ImageProcessing.Point> falseObj = Research.FalseObj(obj, points, param.Radius);
         List<ImageProcessing.Point> lostObj = Research.LostObj(obj, points, param.Radius);
-        double ErrM = Research.GetErrM(objects, inexactObj, param.Radius);
-        double ErrSKO = Research.GetErrSKO(objects, inexactObj, param.Radius);
+        double ErrM = Research.GetErrM(objects, inexactObj, param.Radius, exactObj.Count()+inexactObj.Count());
+        double ErrSKO = Research.GetErrSKO(objects, inexactObj, param.Radius, exactObj.Count() + inexactObj.Count());
         FoundObjTB.Text = (exactObj.Count() + inexactObj.Count()).ToString();
         LostObgTB.Text = lostObj.Count().ToString();
         FalseObjTB.Text = falseObj.Count().ToString();
@@ -160,6 +178,36 @@ namespace MMOI
         }
         SKO /= (256 * 256);
         SKOTB24.Text = SKO.ToString();
+
+    }
+
+    private void label12_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void FalseObjTB_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void MErrNormTB_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void SKOErrNormTB_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void LostAndFalseObjTB_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void LostObgTB_TextChanged(object sender, EventArgs e)
+    {
 
     }
 

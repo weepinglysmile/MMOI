@@ -57,7 +57,7 @@ namespace ImageProcessing
             return Math.Sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
         }
 
-        public static double GetErrM(List<Point> trueObj, List<Point> inexactObj, int R)
+        public static double GetErrM(List<Point> trueObj, List<Point> inexactObj, int R, int N)
         {
             double ErrM = 0;
             foreach (var f in trueObj)
@@ -72,14 +72,14 @@ namespace ImageProcessing
                     }
                 }
             }
-            ErrM /= trueObj.Count();
+            ErrM /= N;
             return ErrM;           
         }
 
-        public static double GetErrSKO(List<Point> trueObj, List<Point> inexactObj, int R)
+        public static double GetErrSKO(List<Point> trueObj, List<Point> inexactObj, int R,int N)
         {
             double ErrSKO = 0;
-            double ErrM = GetErrM(trueObj, inexactObj, R);
+            double ErrM = GetErrM(trueObj, inexactObj, R, N);
             foreach (var f in trueObj)
             {
                 foreach (var o in inexactObj)
@@ -92,7 +92,7 @@ namespace ImageProcessing
                     }
                 }
             }
-            ErrSKO /= trueObj.Count();
+            ErrSKO /= N;
             ErrSKO = Math.Sqrt(ErrSKO);
             return ErrSKO;
         }
